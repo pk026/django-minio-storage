@@ -11,7 +11,7 @@ import minio.error as merr
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files.storage import Storage
-from django.utils.deconstruct import deconstructible
+from .deconstruct import deconstructible
 from minio.helpers import get_target_url
 from minio.policy import Policy
 
