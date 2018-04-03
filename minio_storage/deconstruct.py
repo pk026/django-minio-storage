@@ -1,9 +1,11 @@
 from importlib import import_module
 
+
 def deconstructible(*args, path=None):
     """
     Class decorator that allows the decorated class to be serialized
     by the migrations subsystem.
+
     The `path` kwarg specifies the import path.
     """
     def decorator(klass):
@@ -34,7 +36,7 @@ def deconstructible(*args, path=None):
                     "body to use migrations.\n"
                     "For more information, see "
                     "https://docs.djangoproject.com/en/%s/topics/migrations/#serializing-values"
-                    % (name, module_name, '4.2.2'))
+                    % (name, module_name, '1.4.2'))
             return (
                 path or '%s.%s' % (obj.__class__.__module__, name),
                 obj._constructor_args[0],

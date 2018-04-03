@@ -11,13 +11,12 @@ import minio.error as merr
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.core.files.storage import Storage
-from .deconstruct import deconstructible
 from minio.helpers import get_target_url
 from minio.policy import Policy
 
 from .errors import minio_error
 from .files import ReadOnlySpooledTemporaryFile
-
+from .deconstruct import deconstructible
 try:
     from urllib.parse import urlparse
 except ImportError:  # Python 2.7 compatibility
