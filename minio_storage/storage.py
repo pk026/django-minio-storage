@@ -16,7 +16,7 @@ from minio.policy import Policy
 
 from .errors import minio_error
 from .files import ReadOnlySpooledTemporaryFile
-from .deconstruct import deconstructible
+# from .deconstruct import deconstructible
 try:
     from urllib.parse import urlparse
 except ImportError:  # Python 2.7 compatibility
@@ -26,7 +26,7 @@ except ImportError:  # Python 2.7 compatibility
 logger = getLogger("minio_storage")
 
 
-@deconstructible
+#@deconstructible
 class MinioStorage(Storage):
     """An implementation of Django's file storage using the minio client.
 
@@ -233,7 +233,7 @@ def create_minio_client_from_settings():
     return client
 
 
-@deconstructible
+# @deconstructible
 class MinioMediaStorage(MinioStorage):
     def __init__(self):
         client = create_minio_client_from_settings()
@@ -254,7 +254,7 @@ class MinioMediaStorage(MinioStorage):
             presign_urls=presign_urls)
 
 
-@deconstructible
+# @deconstructible
 class MinioStaticStorage(MinioStorage):
     def __init__(self):
         client = create_minio_client_from_settings()
